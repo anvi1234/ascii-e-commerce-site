@@ -1,0 +1,37 @@
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <select (change)="selectedValue($event)">
+            <option value="price">Price</option>
+            <option value="size">Size</option>
+            <option value="id">Id</option>
+        </select>
+    </div>
+</div>
+        <div class="row">
+            <div (scroll)=" onScroll()">
+            <div   *ngFor="let item of asciiData"  >
+        <div class="col-sm-4 card">
+            <div class="face" [ngStyle]="{'font-size.px':item.size}"> {{item.face}}</div>
+            <div class="row">
+                <span style="padding-left:80px;position: relative;top:40px">Price: ${{item.centsIntodoler| number : '1.2-2'}}</span><span style="padding-left:80px;position: relative;top:40px">Date :{{item.relativeDate}}</span>
+            </div>
+        </div>
+      </div>
+ </div>
+
+ </div>
+   
+  
+<div class="row">
+    <div class="col-sm-12">
+        <div class="spinner-border text-danger" role="status">
+            <div class="loader" ><span *ngIf="isLoading">Loading...</span>
+                <span  *ngIf="isEnd">
+                    end of catalogue
+                </span>
+            </div>
+          </div>
+        </div>
+</div>
